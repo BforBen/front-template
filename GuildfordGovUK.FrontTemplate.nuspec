@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>GuildfordGovUK.FrontTemplate</id>
+        <version>1.0.0</version>
+        <authors>Ben Cheetham</authors>
+        <licenseUrl>https://github.com/GuildfordBC/front-template/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/GuildfordBC/front-template</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Template for guildford.gov.uk apps</description>
+        <summary />
+        <copyright>Guildford Borough Council</copyright>
+        <language>en-GB</language>
+    </metadata>
+    <files>
+        <file src="app/views/**" target="Views/Shared/" />
+    </files>
+</package>
