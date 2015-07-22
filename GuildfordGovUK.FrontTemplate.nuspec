@@ -13,6 +13,6 @@
         <language>en-GB</language>
     </metadata>
     <files>
-        <file src="app/views/**" target="Views/Shared/" />
+        <file src="app/views/**" target="content/Views/Shared" />
     </files>
 </package>
