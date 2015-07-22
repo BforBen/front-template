@@ -11,8 +11,9 @@
         <summary />
         <copyright>Guildford Borough Council</copyright>
         <language>en-GB</language>
+        <dependencies>
+            <dependency id="GuildfordGovUK.FrontAssets" version="[1, 2)" />
+        </dependencies>
     </metadata>
-    <files>
-        <file src="app/views/**" target="content/Views/Shared" />
-    </files>
+    <files />
 </package>
