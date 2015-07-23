@@ -12,7 +12,7 @@
         <copyright>Guildford Borough Council</copyright>
         <language>en-GB</language>
         <dependencies>
-            <dependency id="GuildfordGovUK.FrontAssets" version="[1, 2)" />
+            <dependency id="GuildfordGovUK.FrontAssets" version="[1.0.0, 1.1.0)" />
         </dependencies>
     </metadata>
     <files>

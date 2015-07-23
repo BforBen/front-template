@@ -3,8 +3,12 @@
     string HtmlClass = (string)ViewContext.ViewData["HtmlClass"] ?? "";
 
     string AppTitle = (string)ViewContext.ViewData["ApplicationTitle"] ?? "";
+    string AppVersion = (string)ViewContext.ViewData["ApplicationVersion"] ?? "";
     string NavBrandUrl = (string)ViewContext.ViewData["NavBrandUrl"] ?? Url.Content("~/");
     string NavBrandTitle = (string)ViewContext.ViewData["NavBrandTitle"] ?? "Link to home";
+
+    string FeedbackUrl = (string)ViewContext.ViewData["FeedbackUrl"] ?? "";
+    string SupportUrl = (string)ViewContext.ViewData["SupportUrl"] ?? "";
 }
 <!DOCTYPE html>
 <html lang="en" ng-app="@NgApp" class="@HtmlClass">
@@ -17,25 +21,25 @@
     @Styles.Render("~/assets/css")
     <title>@if (!String.IsNullOrWhiteSpace(ViewBag.Title))
     { <text>@ViewBag.Title - </text> }@AppTitle</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="//static.guildford.gov.uk/assets/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="//static.guildford.gov.uk/assets/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="//static.guildford.gov.uk/assets/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="//static.guildford.gov.uk/assets/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="//static.guildford.gov.uk/assets/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="//static.guildford.gov.uk/assets/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="//static.guildford.gov.uk/assets/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="//static.guildford.gov.uk/assets/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="//static.guildford.gov.uk/assets/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="//static.guildford.gov.uk/assets/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="//static.guildford.gov.uk/assets/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="//static.guildford.gov.uk/assets/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="//static.guildford.gov.uk/assets/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="//static.guildford.gov.uk/assets/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="//static.guildford.gov.uk/assets/manifest.json">
-    <link rel="shortcut icon" href="//static.guildford.gov.uk/assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="//cdn.guildford.gov.uk/assets/manifest.json">
+    <link rel="shortcut icon" href="//cdn.guildford.gov.uk/assets/favicon.ico">
     <meta name="msapplication-TileColor" content="#00aba9">
-    <meta name="msapplication-TileImage" content="//static.guildford.gov.uk/assets/mstile-144x144.png">
-    <meta name="msapplication-config" content="//static.guildford.gov.uk/assets/browserconfig.xml">
+    <meta name="msapplication-TileImage" content="//cdn.guildford.gov.uk/assets/mstile-144x144.png">
+    <meta name="msapplication-config" content="//cdn.guildford.gov.uk/assets/browserconfig.xml">
     <meta name="theme-color" content="#009688">
     <script>
         var BaseUrl = '@Url.Content("~/")';
@@ -103,15 +107,15 @@
             <div class="row footer-appInfo">
                 <div class="col-md-7">
                     <ul class="list-inline">
-                        @if (!String.IsNullOrWhiteSpace((string)ViewContext.ViewData["SupportUrl"]))
+                        @if (!String.IsNullOrWhiteSpace(SupportUrl))
                         {
-                            <li><a href="@ViewContext.ViewData["SupportUrl"]" class="btn btn-link">Support</a></li> }@if (!String.IsNullOrWhiteSpace((string)ViewContext.ViewData["FeedbackUrl"]))
+                            <li><a href="@SupportUrl" class="btn btn-link">Support</a></li> }@if (!String.IsNullOrWhiteSpace(FeedbackUrl))
                             {
-                                <li><a href="@ViewContext.ViewData["FeedbackUrl"]" class="btn btn-link">Feedback</a></li> }
+                                <li><a href="@FeedbackUrl" class="btn btn-link">Feedback</a></li> }
                             <li>Built by <a href="http://guildfordbc.github.io" rel="nofollow">Business Transformation Team</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-5">@ViewContext.ViewData["ApplicationName"] @ViewContext.ViewData["ApplicationVersion"]</div>
+                    <div class="col-md-5">@AppTitle @AppVersion</div>
                 </div>
 
             </div>
