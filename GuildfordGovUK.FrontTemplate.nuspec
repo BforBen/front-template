@@ -13,7 +13,11 @@
         <copyright>Guildford Borough Council</copyright>
         <language>en-GB</language>
         <dependencies>
-            <dependency id="GuildfordGovUK.FrontAssets" version="[1.0.0, 1.1.0)" />
+            <group>
+                <dependency id="GuildfordGovUK.FrontAssets" version="[1.0, 1.1)" />
+                <dependency id="Microsoft.AspNet.Mvc" version="[5.2.0, 6.0)" />
+                <dependency id="Microsoft.AspNet.Web.Optimization" version="[1.1.3, 2.0)" />
+            </group>
         </dependencies>
     </metadata>
     <files>

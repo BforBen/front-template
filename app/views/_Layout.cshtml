@@ -7,8 +7,21 @@
     string NavBrandUrl = (string)ViewContext.ViewData["NavBrandUrl"] ?? Url.Content("~/");
     string NavBrandTitle = (string)ViewContext.ViewData["NavBrandTitle"] ?? "Link to home";
 
+    string Robots = (string)ViewContext.ViewData["Robots"] ?? "noindex, follow";
+
     string FeedbackUrl = (string)ViewContext.ViewData["FeedbackUrl"] ?? "";
     string SupportUrl = (string)ViewContext.ViewData["SupportUrl"] ?? "";
+
+    bool Legacy = (bool?)ViewContext.ViewData["LegacyMode"] ?? false;
+
+    if (Legacy)
+    {
+        HtmlClass += " legacy";
+        if (String.IsNullOrEmpty(AppTitle))
+        {
+            AppTitle = "Guildford Borough Council";
+        }
+    }
 }
 <!DOCTYPE html>
 <html lang="en" ng-app="@NgApp" class="@HtmlClass">
@@ -41,6 +54,7 @@
     <meta name="msapplication-TileImage" content="//cdn.guildford.gov.uk/assets/mstile-144x144.png">
     <meta name="msapplication-config" content="//cdn.guildford.gov.uk/assets/browserconfig.xml">
     <meta name="theme-color" content="#009688">
+    <meta name="robots" content="@Robots">
     <script>
         var BaseUrl = '@Url.Content("~/")';
     </script>
@@ -58,26 +72,52 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="@NavBrandUrl" title="@NavBrandTitle" class="navbar-brand">
+                    @if (Legacy)
+                    {
+                    <img title="Guildford Borough Council" alt="Guildford Borough Council logo" src="//s3-eu-west-1.amazonaws.com/static.guildford.gov.uk/assets/gbc-logo.png" width="276" height="67">
+                    }
+                    else
+                    {
                     @AppTitle
+                    }
                 </a>
             </div>
             <div class="collapse navbar-collapse">
                 @RenderSection("BeforePrimaryNavigation", required: false)
                 @if (IsSectionDefined("PrimaryNavigation"))
                 {
-                    <ul class="nav navbar-nav navbar-right">
-                        @RenderSection("PrimaryNavigation", required: false)
-                    </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Legacy)
+                    {
+                    <li><a href="http://www.guildford.gov.uk">Home</a></li>
+                    <li><a href="http://www.guildford.gov.uk/article/10560/Contact-us">Contact us</a></li>
+                    <li><span><small><a href="https://twitter.com/GuildfordBC" rel="external" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @@GuildfordBC</a></small></span></li>
+                    }
+                    @RenderSection("PrimaryNavigation", required: false)
+                </ul>
                 }
             </div>
         </div>
     </header>
-
     @RenderSection("ServiceStage", required: false)
-
     <div class="container">
         @if (IsSectionDefined("Breadcrumb"))
         {
+            if (Legacy)
+            {
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="breadcrumb">
+                        <span class="lead-in">You are in:</span>
+                        <ol role="breadcrumbs" class="breadcrumb">
+                            @RenderSection("Breadcrumb", required: false)
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
             <div class="row">
                 <div class="col-xs-12">
                     <ol role="breadcrumbs" class="breadcrumb">
@@ -85,6 +125,7 @@
                     </ol>
                 </div>
             </div>
+            }
         }
         <div class="article">
             <div class="row">
@@ -96,33 +137,55 @@
     </div>
     @if (IsSectionDefined("Footer"))
     {
-        <footer role="contentinfo">
-            <div class="container">
-            @if (IsSectionDefined("Footer"))
-            {
+    <footer role="contentinfo">
+        <div class="container">
             <div class="row">
                 @RenderSection("Footer", required: false)
             </div>
-            }
+            @if (!Legacy)
+            {
             <div class="row footer-appInfo">
                 <div class="col-md-7">
                     <ul class="list-inline">
                         @if (!String.IsNullOrWhiteSpace(SupportUrl))
                         {
-                            <li><a href="@SupportUrl" class="btn btn-link">Support</a></li> }@if (!String.IsNullOrWhiteSpace(FeedbackUrl))
-                            {
-                                <li><a href="@FeedbackUrl" class="btn btn-link">Feedback</a></li> }
-                            <li>Built by <a href="http://guildfordbc.github.io" rel="nofollow">Business Transformation Team</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-5">@AppTitle @AppVersion</div>
+                        <li><a href="@SupportUrl" class="btn btn-link">Support</a></li> }@if (!String.IsNullOrWhiteSpace(FeedbackUrl))
+                        {
+                        <li><a href="@FeedbackUrl" class="btn btn-link">Feedback</a></li> }
+                        <li>Built by <a href="http://guildfordbc.github.io" rel="nofollow">Business Transformation Team</a></li>
+                    </ul>
                 </div>
-
+                <div class="col-md-5">@AppTitle @AppVersion</div>
             </div>
-        </footer>
+            }
+            else
+            {
+            <div class="row">
+                <div class="col-sm-9">
+                    <ul class="list-inline">
+                        <li>&copy; @DateTime.Now.Year Guildford Borough Council</li>
+                        <li class="alt i0 btn btn-xs btn-link"><a href="http://www.guildford.gov.uk/linkguidelines" title="View our link guidelines">Link guidelines</a></li>
+                        <li><a href="https://socitm.govmetric.com/survey.aspx?code=171" rel="external" title="Tell us what you think about our site" class="btn btn-xs btn-link">Tell us what you think about our site...</a><img src="https://socitm.govmetric.com/imagecounter.aspx" alt="" height="0" width="0"></li>
+                        <li class="btn btn-xs btn-link"><a href="http://www.guildford.gov.uk/cookiepolicy" title="Read our cookie policy">Cookie policy</a></li>
+                        <li class="btn btn-xs btn-link"><a href="http://www.guildford.gov.uk/privacy" title="Read our privacy statement">Privacy statement</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <ul class="list-inline">
+                        <li><a href="http://www.customerserviceexcellence.uk.com/" rel="external"><img src="//www.guildford.gov.uk/media/imagevalid/s/d/Customer-Service-Excellence.gif" title="Customer Service Excellence logo" alt="Customer Service Excellence logo"></a></li>
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+    </footer>
     }
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    @if (Legacy)
+    {
+    <script src="//platform.twitter.com/widgets.js" async></script>
+    }
     @RenderSection("FooterScripts", required: false)
 </body>
 </html>
