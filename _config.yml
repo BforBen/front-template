@@ -1,7 +1,7 @@
 safe:        true
 
 title:       "Front template"
-baseurl:     /front-template
+baseurl:     /
 username:    GuildfordBC
 
 source:      ./
