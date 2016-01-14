@@ -74,6 +74,21 @@ ViewContext.ViewData["ApplicationTitle"] = "My application";
                 <td>Display in legacy mode with logo and all white UI</td>
                 <td><code>false</code></td>
             </tr>
+            <tr>
+                <td>ErrorHelpUrl</td>
+                <td>Url of a contact page in the case of errors</td>
+                <td><code>http://loop.guildford.gov.uk/BS/Pages/LogaServiceDeskCall.aspx</code></td>
+            </tr>
+            <tr>
+                <td>ErrorHelpName</td>
+                <td>Name of who deals with errors</td>
+                <td><code>ICT Service Desk</code></td>
+            </tr>
+            <tr>
+                <td>ErrorHelpTel</td>
+                <td>Telephone number displayed in the event of an error</td>
+                <td><code>x4906</code></td>
+            </tr>
         </tbody>
     </table>
 </div>
