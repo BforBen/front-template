@@ -6,6 +6,12 @@ layout: default
     <h1>{{ site.title }}</h1>
 </div>
 
+This packages contains
+ - _Layout.cshtml
+ - Error.cshtml
+ 
+ These files should not amended directly. They can be configured and modified using the following options.
+
 ## Layout configuration
 
 The following options can be set via `ViewData` typically in the _ViewStart.cshtml file:
@@ -93,7 +99,67 @@ ViewContext.ViewData["ApplicationTitle"] = "My application";
     </table>
 </div>
 
-The template expects a CSS style bundle at the address `~/assets/css` which includes main.css.
+The template expects a CSS style bundle at the address `~/assets/css` which includes main.css from the Asset folder. Add the following to your BundleConfig.cs
 
+```C#
+            bundles.Add(new StyleBundle("~/assets/css").Include(
+                      "~/assets/main.css"));
+```
+
+## External resources
+
+The template loads the following resources from a CDN and local copies are therefore not required:
+
+ - Bootstrap v3 CSS
+ - Bootstrap v3 Javascript
+ - Google Font (except in Legacy mode)
+ - Favicon and touch icons
+ - jQuery v2
+ - Twitter Widget (Legacy mode only)
+ 
 ## Sections
 
+### HeadScripts
+Add markup such as scripts or CSS before the closing `</head>`
+
+### BeforePrimaryNavigation
+
+### PrimaryNavigation
+List items to include in the primary navigation bar (rendered in the header and collapses to a menu on small devices).
+
+```
+   <li><a href="http://www.guildford.gov.uk">Home</a></li>
+```
+In legacy mode some standard links are automatically included if the section is defined.
+
+### ServiceStage
+A section to optionally display the service design phase.
+
+```
+    <div class="service-stage">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span class="label label-stage label-beta">BETA</span> This is a new service – your <a href="#" title="Send feedback about CustomerPoint">feedback</a> will help us to improve it.
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+### Breadcrumb
+List items to include in the breadcrumb trail
+
+### Footer
+An area to add content to a `<div class="row">`
+
+In legacy mode some standard links are automatically included if the section is defined.
+
+In non-legacy mode support and feedback links are displayed if the appropriate settings are configured.
+
+### FooterScripts
+Add markup such as scripts or CSS before the closing `</body>`
+
+## Javascript
+
+`BaseUrl` is defined in `<head>` which contains the site root (output from `Url.Content("~/")`).
