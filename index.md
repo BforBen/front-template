@@ -16,7 +16,7 @@ This packages contains
 
 The following options can be set via `ViewData` typically in the _ViewStart.cshtml file:
 
-```
+```c#
 ViewContext.ViewData["ApplicationTitle"] = "My application";
 ```
 
@@ -101,7 +101,7 @@ ViewContext.ViewData["ApplicationTitle"] = "My application";
 
 The template expects a CSS style bundle at the address `~/assets/css` which includes main.css from the Asset folder. Add the following to your BundleConfig.cs
 
-```
+```c#
             bundles.Add(new StyleBundle("~/assets/css").Include(
                       "~/assets/main.css"));
 ```
@@ -127,7 +127,7 @@ Add markup such as scripts or CSS before the closing `</head>`
 ### PrimaryNavigation
 List items to include in the primary navigation bar (rendered in the header and collapses to a menu on small devices).
 
-```
+```html
    <li><a href="http://www.guildford.gov.uk">Home</a></li>
 ```
 In legacy mode some standard links are automatically included if the section is defined.
@@ -135,7 +135,7 @@ In legacy mode some standard links are automatically included if the section is 
 ### ServiceStage
 A section to optionally display the service design phase.
 
-```
+```html
     <div class="service-stage">
         <div class="container">
             <div class="row">
