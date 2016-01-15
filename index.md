@@ -10,7 +10,7 @@ This packages contains
  - _Layout.cshtml
  - Error.cshtml
  
- These files should not amended directly. They can be configured and modified using the following options.
+These files should not amended directly. They can be configured and modified using the following options.
 
 ## Layout configuration
 
