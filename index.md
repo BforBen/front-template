@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 ---
 
@@ -101,7 +101,7 @@ ViewContext.ViewData["ApplicationTitle"] = "My application";
 
 The template expects a CSS style bundle at the address `~/assets/css` which includes main.css from the Asset folder. Add the following to your BundleConfig.cs
 
-```C#
+```
             bundles.Add(new StyleBundle("~/assets/css").Include(
                       "~/assets/main.css"));
 ```
