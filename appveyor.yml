@@ -4,8 +4,7 @@ environment:
 
 branches:
   except:
-    - gh-pages
-    - demo
+  - demo
 
 skip_tags: true
 
