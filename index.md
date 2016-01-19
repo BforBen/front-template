@@ -17,7 +17,7 @@ These files should not amended directly as they will be over-written by future p
 
 The following options can be set via `ViewData` typically in the _ViewStart.cshtml file:
 
-{% highlight c# %}
+{% highlight csharp %}
 ViewContext.ViewData["ApplicationTitle"] = "My application";
 {% endhighlight %}
 
@@ -102,7 +102,7 @@ ViewContext.ViewData["ApplicationTitle"] = "My application";
 
 The template expects a CSS style bundle at the address `~/assets/css` which includes main.css from the Asset folder. Add the following to your BundleConfig.cs
 
-{% highlight c# %}
+{% highlight csharp %}
             bundles.Add(new StyleBundle("~/assets/css").Include(
                       "~/assets/main.css"));
 {% endhighlight %}
@@ -138,15 +138,15 @@ In legacy mode some standard links are automatically included if the section is 
 A section to optionally display the service design phase.
 
 {% highlight html %}
-    <div class="service-stage">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <span class="label label-stage label-beta">BETA</span> This is a new service – your <a href="#" title="Send feedback about CustomerPoint">feedback</a> will help us to improve it.
-                </div>
+<div class="service-stage">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <span class="label label-stage label-beta">BETA</span> This is a new service – your <a href="#" title="Send feedback about CustomerPoint">feedback</a> will help us to improve it.
             </div>
         </div>
     </div>
+</div>
 {% endhighlight %}
 
 ### Breadcrumb
