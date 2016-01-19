@@ -5,6 +5,7 @@ environment:
 branches:
   except:
     - gh-pages
+    - demo
 
 skip_tags: true
 
