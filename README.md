@@ -1,3 +1,3 @@
-# front-template
+# Front template
 .NET Razor template
 
