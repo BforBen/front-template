@@ -1,9 +1,10 @@
 ---
 layout: default
+title: Front template
 ---
 
 <div class="page-header">
-    <h1>{{ site.title }}</h1>
+    <h1>{{ page.title }}</h1>
 </div>
 
 This packages contains the following two Razor template files:
