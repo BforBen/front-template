@@ -12,7 +12,13 @@ This packages contains the following two Razor template files:
  - _Layout.cshtml
  - Error.cshtml
  
-These files should not amended directly as they will be over-written by future package updates. They can be configured and modified using the following options. If further configuration is required, please [log an issue](https://github.com/GuildfordBC/front-template/issues/new).
+These files should not amended directly as they will be over-written by future package updates. It is recommended that an additional _Layout file is created to contain application specific content i.e.
+
+ - _Layout.cshtml (from Nuget package)
+  - _Layout.App.cshtml (new file created and set as `Layout` in _ViewStart.cshtml e.g. `Layout = "~/Views/Shared/_Layout.App.cshtml";`)
+    - Controller action template
+
+Additionally, there are configuration options listed below which can be specified in the _ViewStart.cshtml to set values or modify the template.
 
 A live demonstration of the template can be viewed at [http://gbc-front-template.azurewebsites.net](http://gbc-front-template.azurewebsites.net).
 
