@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildfordBoroughCouncil.Web.FrontTemplateDemo", "GuildfordBoroughCouncil.Web.FrontTemplateDemo\GuildfordBoroughCouncil.Web.FrontTemplateDemo.csproj", "{EBFDCD0D-DF6A-4C36-AB28-C43C668863C5}"
 EndProject
-Project("{2663D785-051B-485D-9D30-857467B5C15E}") = ".nuget", ".nuget", "{E4494BC9-9CD4-4190-8036-59DA0E845EDC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2663D785-051B-485D-9D30-857467B5C15E}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\nuget.config = .nuget\nuget.config
 	EndProjectSection

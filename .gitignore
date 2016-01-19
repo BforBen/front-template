@@ -177,3 +177,4 @@ FakesAssemblies/
 GuildfordBoroughCouncil.Web.FrontTemplateDemo/Views/Shared/Error.cshtml
 GuildfordBoroughCouncil.Web.FrontTemplateDemo/Assets/main.css
 GuildfordBoroughCouncil.Web.FrontTemplateDemo/Views/Shared/_Layout.cshtml
+/.vs
