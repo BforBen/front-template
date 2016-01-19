@@ -6,16 +6,19 @@
 
 @section HeadScripts
 {
-    <!-- This content is in HeadScripts -->
+    <!-- Start HeadScripts -->
+    <!-- End HeadScripts -->
 }
 
 @section BeforePrimaryNavigation
 {
-
+    <!-- Start BeforePrimaryNavigation -->
+    <!-- End BeforePrimaryNavigation -->
 }
 
 @section PrimaryNavigation
 {
+    <!-- Start PrimaryNavigation -->
     @if (LegacyMode)
     {
         <li>@Html.ActionLink("Switch to normal", "Index", "Home", new { mode = "" }, null)</li>
@@ -24,10 +27,12 @@
     {
         <li>@Html.ActionLink("Switch to legacy", "Index", "Home", new { mode = "legacy" }, null)</li>
     }
+    <!-- End PrimaryNavigation -->
 }
 
 @section ServiceStage
 {
+    <!-- End ServiceStage -->
     <div class="service-stage">
         <div class="container">
             <div class="row">
@@ -37,27 +42,33 @@
             </div>
         </div>
     </div>
+    <!-- End ServiceStage -->
 }
 
 @section Breadcrumb
 {
+    <!-- Start Breadcrumb -->
     <li><a href="~/">Pattern library demo</a></li>
     @if (LegacyMode)
     {
         <text>[legacy mode]</text>
     }
+    <!-- End Breadcrumb -->
 }
 
 @section Footer
 {
+    <!-- Start Footer -->
     <div class="col-xs-12">
         <p>Footer content</p>
     </div>
+    <!-- End Footer -->
 }
 
 @section FooterScripts
 {
-    <!-- This content is in FooterScripts -->
+    <!-- Start FooterScripts -->
+    <!-- End FooterScripts -->
 }
 
 @RenderBody()
