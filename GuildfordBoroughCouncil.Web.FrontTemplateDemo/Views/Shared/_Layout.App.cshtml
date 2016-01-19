@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var LegacyMode = (bool?)ViewData["LegacyMode"] ?? false;
+}
+
+@section HeadScripts
+{
+    <!-- This content is in HeadScripts -->
+}
+
+@section BeforePrimaryNavigation
+{
+
+}
+
+@section PrimaryNavigation
+{
+    @if (LegacyMode)
+    {
+        <li>@Html.ActionLink("Switch to normal", "Index", "Home", new { mode = "" }, null)</li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Switch to legacy", "Index", "Home", new { mode = "legacy" }, null)</li>
+    }
+}
+
+@section ServiceStage
+{
+    <div class="service-stage">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <span class="label label-stage label-live">LIVE</span> This is a demo – your <a href="https://github.com/GuildfordBC/front-template/issues/new" title="Send feedback">feedback</a> will help us to improve it.
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Breadcrumb
+{
+    <li><a href="~/">Pattern library demo</a></li>
+    @if (LegacyMode)
+    {
+        <text>[legacy mode]</text>
+    }
+}
+
+@section Footer
+{
+    <div class="col-xs-12">
+        <p>Footer content</p>
+    </div>
+}
+
+@section FooterScripts
+{
+    <!-- This content is in FooterScripts -->
+}
+
+@RenderBody()

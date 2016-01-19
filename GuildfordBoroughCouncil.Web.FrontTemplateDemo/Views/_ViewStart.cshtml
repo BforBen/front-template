@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.App.cshtml";
+
+    ViewContext.ViewData["NgApp"] = "";
+    ViewContext.ViewData["HtmlClass"] = "";
+    ViewContext.ViewData["ApplicationTitle"] = "Front template demo";
+    ViewContext.ViewData["ApplicationVersion"] = "v1";
+    ViewContext.ViewData["NavBrandUrl"] = Url.Content("~/");
+    ViewContext.ViewData["NavBrandTitle"] = "Link to home";
+    ViewContext.ViewData["Robots"] = "	noindex, follow";
+    ViewContext.ViewData["FeedbackUrl"] = "https://github.com/GuildfordBC/front-template/issues/new";
+    ViewContext.ViewData["SupportUrl"] = "http://guildfordbc.github.io/front-template/";
+    ViewContext.ViewData["ErrorHelpUrl"] = "https://github.com/GuildfordBC/front-template/issues/new";
+    ViewContext.ViewData["ErrorHelpName"] = "ICT Development";
+    ViewContext.ViewData["ErrorHelpTel"] = "x4906";
+
+    // For the purposes of the demo, this is being set in the controller. Otherwise, configure here.
+    // ViewContext.ViewData["LegacyMode"] = false;
+}
