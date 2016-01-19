@@ -14,6 +14,8 @@ This packages contains the following two Razor template files:
  
 These files should not amended directly as they will be over-written by future package updates. They can be configured and modified using the following options. If further configuration is required, please [log an issue](https://github.com/GuildfordBC/front-template/issues/new).
 
+A live demonstration of the template can be viewed at http://gbc-front-template.azurewebsites.net/.
+
 ## Layout configuration
 
 The following options can be set via `ViewData` typically in the _ViewStart.cshtml file:
