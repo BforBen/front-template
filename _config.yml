@@ -1,13 +1,9 @@
 safe:        true
 
-title:       "Front template"
-baseurl:     /
+title:       "Guildford Borough Council front template"
+baseurl:     /front-template
 username:    GuildfordBC
 
-source:      ./
-destination: ./_site
-plugins:     ./_plugins
-future:      true
 lsi:         false
 highlighter: pygments
 markdown:    kramdown
@@ -24,9 +20,6 @@ exclude:
   - tools
   - vendor
 
-rdiscount:
-  extensions: []
-
 kramdown:
   auto_ids: true,
   footnote_nr: 1
@@ -41,7 +34,3 @@ kramdown:
     coderay_tab_width: 4
     coderay_bold_every: 10
     coderay_css: style
-
-sass:
-  syntax: scss        # scss|sass
-  style:  compressed  # nested|expanded|compact|compressed

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 ---
 
@@ -6,11 +6,12 @@ layout: default
     <h1>{{ site.title }}</h1>
 </div>
 
-This packages contains
+This packages contains the following two Razor template files:
+
  - _Layout.cshtml
  - Error.cshtml
  
-These files should not amended directly. They can be configured and modified using the following options.
+These files should not amended directly as they will be over-written by future package updates. They can be configured and modified using the following options. If further configuration is required, please [log an issue](https://github.com/GuildfordBC/front-template/issues/new).
 
 ## Layout configuration
 
