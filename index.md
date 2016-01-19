@@ -17,9 +17,9 @@ These files should not amended directly as they will be over-written by future p
 
 The following options can be set via `ViewData` typically in the _ViewStart.cshtml file:
 
-```c#
+{% highlight c# %}
 ViewContext.ViewData["ApplicationTitle"] = "My application";
-```
+{% endhighlight %}
 
 <div class="table-responsive">
     <table class="table">
@@ -102,10 +102,10 @@ ViewContext.ViewData["ApplicationTitle"] = "My application";
 
 The template expects a CSS style bundle at the address `~/assets/css` which includes main.css from the Asset folder. Add the following to your BundleConfig.cs
 
-```c#
+{% highlight c# %}
             bundles.Add(new StyleBundle("~/assets/css").Include(
                       "~/assets/main.css"));
-```
+{% endhighlight %}
 
 ## External resources
 
@@ -128,16 +128,16 @@ Add markup such as scripts or CSS before the closing `</head>`
 ### PrimaryNavigation
 List items to include in the primary navigation bar (rendered in the header and collapses to a menu on small devices).
 
-```
+{% highlight html %}
    <li><a href="http://www.guildford.gov.uk">Home</a></li>
-```
+{% endhighlight %}
 
 In legacy mode some standard links are automatically included if the section is defined.
 
 ### ServiceStage
 A section to optionally display the service design phase.
 
-```
+{% highlight html %}
     <div class="service-stage">
         <div class="container">
             <div class="row">
@@ -147,7 +147,7 @@ A section to optionally display the service design phase.
             </div>
         </div>
     </div>
-```
+{% endhighlight %}
 
 ### Breadcrumb
 List items to include in the breadcrumb trail
