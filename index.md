@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 ---
 
@@ -128,15 +128,16 @@ Add markup such as scripts or CSS before the closing `</head>`
 ### PrimaryNavigation
 List items to include in the primary navigation bar (rendered in the header and collapses to a menu on small devices).
 
-```html
+```
    <li><a href="http://www.guildford.gov.uk">Home</a></li>
 ```
+
 In legacy mode some standard links are automatically included if the section is defined.
 
 ### ServiceStage
 A section to optionally display the service design phase.
 
-```html
+```
     <div class="service-stage">
         <div class="container">
             <div class="row">
