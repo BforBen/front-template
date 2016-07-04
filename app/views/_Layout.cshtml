@@ -21,13 +21,13 @@
     if (Legacy)
     {
         HtmlClass += " legacy";
-        if (String.IsNullOrEmpty(AppTitle))
+        if (string.IsNullOrEmpty(AppTitle))
         {
             AppTitle = "Guildford Borough Council";
         }
     }
     
-    if (!string.IsNullOrWhiteSpace(JsDelivr)
+    if (!string.IsNullOrWhiteSpace(JsDelivr))
     {
         JsDelivr = "," + JsDelivr;
     }
